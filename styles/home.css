@@ -1,3 +1,22 @@
 body {
-    background-color: black;
+    background-color: #3D3A3A;
+}
+
+.header {
+    margin: 0px 40px;
+}
+
+.nav-header {
+    background-color: #b9b9b9;
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 50px;
+}
+
+.nav-link {
+    color: #3D3A3A;
+    text-decoration: none;
+    font-size: 30px;
 }
