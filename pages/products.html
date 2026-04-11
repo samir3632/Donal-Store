@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda | Donal Store</title>
+  <link rel="stylesheet" href="../styles/productos.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html" aria-label="Donal Store - Inicio">
+        <span class="brand-mark">DS</span>
+        <span class="brand-name">Donal Store</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="home.html" class="nav-link">Inicio</a>
+        <a href="products.html" class="nav-link is-active">Tienda</a>
+        <a href="carrito.html" class="nav-link">Carrito</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="carrito.html">Ver carrito</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Tienda</h1>
+          <p class="page-subtitle">Moda para mujer, hombre y accesorios. Elige tu estilo.</p>
+        </div>
+
+        <form class="search" action="#" method="get">
+          <label class="sr-only" for="q">Buscar</label>
+          <input id="q" class="input" type="search" placeholder="Buscar: camisetas, jeans, hoodie..." />
+        </form>
+      </div>
+
+      <div class="shop-layout">
+        <aside class="panel filters" aria-label="Filtros">
+          <h2 class="panel-title">Filtrar</h2>
+
+          <div class="filter-block">
+            <div class="filter-title">Categoría</div>
+            <div class="chips">
+              <button class="chip is-active" type="button">Todo</button>
+              <button class="chip" type="button">Mujer</button>
+              <button class="chip" type="button">Hombre</button>
+              <button class="chip" type="button">Accesorios</button>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Talla</div>
+            <div class="chips">
+              <button class="chip" type="button">XS</button>
+              <button class="chip" type="button">S</button>
+              <button class="chip is-active" type="button">M</button>
+              <button class="chip" type="button">L</button>
+              <button class="chip" type="button">XL</button>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Color</div>
+            <div class="color-row">
+              <span class="swatch" style="--c:#111827" title="Negro"></span>
+              <span class="swatch" style="--c:#ffffff" title="Blanco"></span>
+              <span class="swatch" style="--c:#2563eb" title="Azul"></span>
+              <span class="swatch" style="--c:#ec4899" title="Rosa"></span>
+              <span class="swatch" style="--c:#22c55e" title="Verde"></span>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <div class="filter-title">Precio</div>
+            <div class="range">
+              <input type="range" min="0" max="100" value="50" />
+              <div class="range-meta">
+                <span>$0</span><span>$100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-actions">
+            <button class="btn btn-ghost" type="button">Limpiar</button>
+            <button class="btn btn-primary" type="button">Aplicar</button>
+          </div>
+        </aside>
+
+        <!-- Grid de productos -->
+        <section class="products" aria-label="Listado de productos">
+          <div class="products-head">
+            <h2 class="products-title">Colección</h2>
+
+            <div class="sort">
+              <label class="sort-label" for="sort">Ordenar</label>
+              <select id="sort" class="select">
+                <option>Recomendados</option>
+                <option>Precio: menor a mayor</option>
+                <option>Precio: mayor a menor</option>
+                <option>Novedades</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid">
+            <!-- Card producto -->
+            <article class="product-card" data-id="camiseta-basica" data-price="19.99" data-category="mujer">
+              <div class="media"></div>
+              <div class="body">
+                <div class="top">
+                  <h3 class="title">Camiseta Básica Premium</h3>
+                  <span class="tag">Mujer</span>
+                </div>
+                <p class="desc">Algodón suave, fit cómodo. Ideal para combinar.</p>
+
+                <div class="meta">
+                  <div class="sizes">
+                    <span class="size is-active">S</span>
+                    <span class="size">M</span>
+                    <span class="size">L</span>
+                  </div>
+                  <div class="colors">
+                    <span class="dot" style="--c:#ffffff"></span>
+                    <span class="dot" style="--c:#111827"></span>
+                    <span class="dot" style="--c:#2563eb"></span>
+                  </div>
+                </div>
+
+                <div class="bottom">
+                  <span class="price">$19.99</span>
+                  <button class="btn btn-primary btn-small add-to-cart" type="button">
+                    Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-id="hoodie-oversize" data-price="39.99" data-category="hombre">
+              <div class="media"></div>
+              <div class="body">
+                <div class="top">
+                  <h3 class="title">Hoodie Oversize</h3>
+                  <span class="tag">Hombre</span>
+                </div>
+                <p class="desc">Estilo urbano, suave por dentro, corte moderno.</p>
+
+                <div class="meta">
+                  <div class="sizes">
+                    <span class="size">M</span>
+                    <span class="size is-active">L</span>
+                    <span class="size">XL</span>
+                  </div>
+                  <div class="colors">
+                    <span class="dot" style="--c:#111827"></span>
+                    <span class="dot" style="--c:#64748b"></span>
+                  </div>
+                </div>
+
+                <div class="bottom">
+                  <span class="price">$39.99</span>
+                  <button class="btn btn-primary btn-small add-to-cart" type="button">Agregar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-id="jeans-slim" data-price="29.99" data-category="hombre">
+              <div class="media"></div>
+              <div class="body">
+                <div class="top">
+                  <h3 class="title">Jeans Slim Fit</h3>
+                  <span class="tag">Hombre</span>
+                </div>
+                <p class="desc">Denim cómodo con corte slim. Básico esencial.</p>
+
+                <div class="meta">
+                  <div class="sizes">
+                    <span class="size">30</span>
+                    <span class="size is-active">32</span>
+                    <span class="size">34</span>
+                  </div>
+                  <div class="colors">
+                    <span class="dot" style="--c:#1f2937"></span>
+                    <span class="dot" style="--c:#0b1220"></span>
+                  </div>
+                </div>
+
+                <div class="bottom">
+                  <span class="price">$29.99</span>
+                  <button class="btn btn-primary btn-small add-to-cart" type="button">Agregar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-id="bolso-mini" data-price="14.99" data-category="accesorios">
+              <div class="media"></div>
+              <div class="body">
+                <div class="top">
+                  <h3 class="title">Bolso Mini</h3>
+                  <span class="tag">Accesorios</span>
+                </div>
+                <p class="desc">Compacto, elegante y perfecto para diario.</p>
+
+                <div class="meta">
+                  <div class="sizes">
+                    <span class="size is-active">U</span>
+                  </div>
+                  <div class="colors">
+                    <span class="dot" style="--c:#111827"></span>
+                    <span class="dot" style="--c:#ec4899"></span>
+                  </div>
+                </div>
+
+                <div class="bottom">
+                  <span class="price">$14.99</span>
+                  <button class="btn btn-primary btn-small add-to-cart" type="button">Agregar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Donal Store</div>
+        <div class="footer-muted">© 2026 Todos los derechos reservados.</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="home.html">Inicio</a>
+        <a href="products.html">Tienda</a>
+        <a href="carrito.html">Carrito</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
