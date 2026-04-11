@@ -1,14 +1,15 @@
---Eliminar base de datos si ya existe
+-- Eliminar base de datos si ya existe
 DROP DATABASE IF EXISTS donal_store;
 
---Crear base de datos
+-- Crear base de datos
 CREATE DATABASE donal_store;
 
---Usar la base de datos
+-- Usar base de datos
 USE donal_store;
 
 
 --TABLA productos
+
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
@@ -49,3 +50,9 @@ VALUES
 --Productos
 INSERT INTO productos (nombre, descripcion, precio, stock)
 VALUES
+('Blusa básica', 'Blusa elegante color beige', 80000, 60),
+('Blusa manga corta', 'Blusa manga corta negra', 120000, 100),
+('Vestido corto', 'Vestido casual para verano', 180000, 90),
+('Vestido largo', 'Vestido largo elegante', 230000, 76),
+('Short', 'short casual para verano', 180000, 90),
+('Short corto', 'Short ', 180000, 90),
