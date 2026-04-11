@@ -1,22 +1,40 @@
 body {
-    background-color: #3D3A3A;
+  background-color: #3D3A3A;
 }
 
 .header {
-    margin: 0px 40px;
+  margin: 0px 40px;
 }
 
 .nav-header {
-    background-color: #b9b9b9;
-    border-radius: 10px;
+  background-color: #b9b9b9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;  
+  padding: 12px 20px;
+  gap: 20px;              
 }
 
 .logo {
-    font-size: 50px;
+  font-size: 50px;
+  margin: 0;              
+}
+
+.nav {
+  margin-left: auto;    
+  display: flex;
+  align-items: center;
+  gap: 24px;          
 }
 
 .nav-link {
-    color: #3D3A3A;
-    text-decoration: none;
-    font-size: 30px;
+  color: #3D3A3A;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0;            
+  padding: 8px 50px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
