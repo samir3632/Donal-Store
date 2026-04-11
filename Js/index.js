@@ -1,6 +1,5 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// AGREGAR PRODUCTO
 function AgregarAlCarrito(id, nombre, precio) {
   const existe = carrito.find(item => item.id === id);
 

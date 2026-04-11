@@ -1,27 +1,256 @@
 <!DOCTYPE html>
-<script src="Js/index.js"></script>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donal Store</title>
-    <link rel="stylesheet" href="../styles/home.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donal Store</title>
+  <link rel="stylesheet" href="../styles/home.css" />
 </head>
+
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html" aria-label="Donal Store - Inicio">
+        <span class="brand-mark">DS</span>
+        <span class="brand-name">Donal Store</span>
+      </a>
 
-    <header class="header">
-        <div class="nav-header">
-            <h1 class="logo">Donal Store</h1>
-            <nav class="nav">
-                <a href="home.html" class="nav-link">Inicio</a>
-                <a href="products.html" class="nav-link">Productos</a>
-                <a href="carrito.html" class="nav-link">Carrito</a>
-            </nav>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="home.html" class="nav-link is-active">Inicio</a>
+        <a href="products.html" class="nav-link">Productos</a>
+        <a href="carrito.html" class="nav-link">Carrito</a>
+      </nav>
 
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="products.html">Ver catálogo</a>
+        <a class="btn btn-primary" href="carrito.html">Ir al carrito</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="badge">Envíos rápidos • Pagos seguros • Soporte</p>
+          <h1 class="hero-title">Tu tienda, más simple. Más rápida. Más bonita.</h1>
+          <p class="hero-subtitle">
+            Descubre productos seleccionados, ofertas semanales y una experiencia de compra moderna.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="products.html">Explorar productos</a>
+            <a class="btn btn-ghost" href="#destacados">Ver destacados</a>
+          </div>
+
+          <div class="hero-stats" role="list">
+            <div class="stat" role="listitem">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Atención</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat-number">2–5 días</div>
+              <div class="stat-label">Envío</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Seguro</div>
+            </div>
+          </div>
         </div>
 
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-card-inner">
+            <div class="mock-top">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="mock-body">
+              <div class="mock-line w80"></div>
+              <div class="mock-line w60"></div>
+              <div class="mock-line w90"></div>
+              <div class="mock-grid">
+                <div class="mock-tile"></div>
+                <div class="mock-tile"></div>
+                <div class="mock-tile"></div>
+                <div class="mock-tile"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    </header>
-    
+    <!-- Categorías -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Compra por categoría</h2>
+          <p class="section-subtitle">Encuentra lo que necesitas en segundos.</p>
+        </div>
+
+        <div class="cards-3">
+          <a class="card" href="products.html">
+            <div class="card-icon">★</div>
+            <h3 class="card-title">Novedades</h3>
+            <p class="card-text">Lo más reciente y recomendado.</p>
+          </a>
+
+          <a class="card" href="products.html">
+            <div class="card-icon">%</div>
+            <h3 class="card-title">Ofertas</h3>
+            <p class="card-text">Precios especiales por tiempo limitado.</p>
+          </a>
+
+          <a class="card" href="products.html">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">Más vendidos</h3>
+            <p class="card-text">Los favoritos de la comunidad.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destacados -->
+    <section class="section section-muted" id="destacados">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Destacados de la semana</h2>
+          <p class="section-subtitle">Una selección con excelente relación calidad/precio.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product">
+            <div class="product-media"></div>
+            <div class="product-body">
+              <h3 class="product-title">Producto Destacado 1</h3>
+              <p class="product-desc">Descripción breve del producto. Beneficio principal y valor.</p>
+              <div class="product-row">
+                <span class="price">$19.99</span>
+                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media"></div>
+            <div class="product-body">
+              <h3 class="product-title">Producto Destacado 2</h3>
+              <p class="product-desc">Descripción breve del producto. Beneficio principal y valor.</p>
+              <div class="product-row">
+                <span class="price">$29.99</span>
+                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media"></div>
+            <div class="product-body">
+              <h3 class="product-title">Producto Destacado 3</h3>
+              <p class="product-desc">Descripción breve del producto. Beneficio principal y valor.</p>
+              <div class="product-row">
+                <span class="price">$14.99</span>
+                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="product-media"></div>
+            <div class="product-body">
+              <h3 class="product-title">Producto Destacado 4</h3>
+              <p class="product-desc">Descripción breve del producto. Beneficio principal y valor.</p>
+              <div class="product-row">
+                <span class="price">$39.99</span>
+                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="panel">
+            <h2 class="section-title">Una experiencia de compra cuidada</h2>
+            <p class="section-subtitle">
+              Diseño limpio, jerarquía visual, sombras sutiles y componentes consistentes.
+            </p>
+            <ul class="list">
+              <li><strong>Checkout simple</strong> y accesible</li>
+              <li><strong>UI moderna</strong> con tarjetas y botones consistentes</li>
+              <li><strong>Responsive</strong> para móvil, tablet y desktop</li>
+            </ul>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="products.html">Ir a productos</a>
+              <a class="btn btn-ghost" href="carrito.html">Ver carrito</a>
+            </div>
+          </div>
+
+          <div class="panel panel-glass" aria-hidden="true">
+            <div class="mini-cards">
+              <div class="mini-card">
+                <div class="mini-title">Pago seguro</div>
+                <div class="mini-text">Protección y confianza.</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-title">Envíos</div>
+                <div class="mini-text">Seguimiento de pedido.</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-title">Soporte</div>
+                <div class="mini-text">Respuesta rápida.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 class="cta-title">Recibe ofertas y novedades</h2>
+            <p class="cta-text">Suscríbete y entérate primero de promos y lanzamientos.</p>
+          </div>
+
+          <form class="cta-form" action="#" method="get">
+            <label class="sr-only" for="email">Correo</label>
+            <input id="email" class="input" type="email" placeholder="tu@email.com" required />
+            <button class="btn btn-primary" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">Donal Store</div>
+        <div class="footer-muted">© <span id="year"></span> Todos los derechos reservados.</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="home.html">Inicio</a>
+        <a href="products.html">Productos</a>
+        <a href="carrito.html">Carrito</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
