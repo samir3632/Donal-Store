@@ -1,19 +1,19 @@
 <?php
- function ConexionBaseDatos(){
- $host="localhost";
- $base_datos="donal_store";
-    $usuario="root";
-$contraseña="";
-try {
-    $conexion = new PDO( "mysql:host=$host;dbname=$base_datos;charset=utf8",
-    $usuario,
-    $contraseña);
- $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- return $conexion;
- }catch(PDOException $e){
-die("Error en la conexion: ".$e->getMessage());
- }
+function ConexionBaseDatos(): PDO {
+  $host = "localhost";
+  $db   = "donal_store";
+  $user = "root";
+  $pass = "";
 
- }
- $conexion=ConexionBaseDatos(); 
-?>
+  $dsn = "mysql:host={$host};dbname={$db};charset=utf8mb4";
+
+  try {
+    return new PDO($dsn, $user, $pass, [
+      PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+      PDO::ATTR_EMULATE_PREPARES   => false,
+    ]);
+  } catch (PDOException $e) {
+    die("Error en la conexión: " . $e->getMessage());
+  }
+}

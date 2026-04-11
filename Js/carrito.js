@@ -1,35 +1,20 @@
 // CARGAR CARRITO DESDE LOCALSTORAGE
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// AGREGAR PRODUCTO
-function agregarAlCarrito(id, nombre, precio) {
-  const existe = carrito.find(item => item.id === id);
-
-  if (existe) {
-    existe.cantidad++;
-  } else {
-    carrito.push({ id, nombre, precio, cantidad: 1 });
-  }
-
-  guardarCarrito();
-  actualizarCarrito();
-}
-
 // ELIMINAR PRODUCTO
 function eliminarProducto(id) {
-  carrito = carrito.filter(item => item.id !== id);
+  carrito = carrito.filter(item => String(item.id) !== String(id));
   guardarCarrito();
   actualizarCarrito();
 }
 
 // CAMBIAR CANTIDAD
 function cambiarCantidad(id, cantidad) {
-  cantidad = parseInt(cantidad);
+  cantidad = parseInt(cantidad, 10);
 
-  const producto = carrito.find(item => item.id === id);
-
+  const producto = carrito.find(item => String(item.id) === String(id));
   if (producto) {
-    producto.cantidad = cantidad;
+    producto.cantidad = Number.isFinite(cantidad) ? cantidad : 1;
 
     if (producto.cantidad <= 0) {
       eliminarProducto(id);
@@ -46,6 +31,11 @@ function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+// FORMATO DINERO
+function money(n) {
+  return "$" + Number(n || 0).toFixed(2);
+}
+
 // ACTUALIZAR CARRITO (ADAPTADO A TU HTML)
 function actualizarCarrito() {
   const contenedor = document.getElementById("cartList");
@@ -59,21 +49,24 @@ function actualizarCarrito() {
 
   contenedor.innerHTML = "";
 
-  let total = 0;
+  let subtotal = 0;
   let totalItems = 0;
 
-  // Estado vacío
   if (carrito.length === 0) {
     emptyState.hidden = false;
   } else {
     emptyState.hidden = true;
   }
 
-  // Renderizar productos
   carrito.forEach(item => {
-    const lineTotal = item.precio * item.cantidad;
-    total += lineTotal;
-    totalItems += item.cantidad;
+    const qty = Math.max(1, parseInt(item.cantidad, 10) || 1);
+    item.cantidad = qty;
+
+    const price = Number(item.precio || 0);
+    const lineTotal = price * qty;
+
+    subtotal += lineTotal;
+    totalItems += qty;
 
     contenedor.innerHTML += `
       <article class="cart-item">
@@ -86,24 +79,24 @@ function actualizarCarrito() {
               <p class="item-meta">Producto</p>
             </div>
 
-            <button class="icon-btn remove" onclick="eliminarProducto(${item.id})">
+            <button class="icon-btn remove" type="button" onclick="eliminarProducto('${item.id}')">
               ✕
             </button>
           </div>
 
           <div class="item-bottom">
             <div class="qty">
-              <button class="qty-btn dec" onclick="cambiarCantidad(${item.id}, ${item.cantidad - 1})">−</button>
+              <button class="qty-btn dec" type="button" onclick="cambiarCantidad('${item.id}', ${qty - 1})">−</button>
 
-              <input class="qty-input" type="number" min="1" value="${item.cantidad}" 
-              onchange="cambiarCantidad(${item.id}, this.value)">
+              <input class="qty-input" type="number" min="1" value="${qty}"
+                onchange="cambiarCantidad('${item.id}', this.value)">
 
-              <button class="qty-btn inc" onclick="cambiarCantidad(${item.id}, ${item.cantidad + 1})">+</button>
+              <button class="qty-btn inc" type="button" onclick="cambiarCantidad('${item.id}', ${qty + 1})">+</button>
             </div>
 
             <div class="price-block">
-              <div class="unit">Unit: $${item.precio}</div>
-              <div class="line-price">$${lineTotal.toFixed(2)}</div>
+              <div class="unit">Unit: ${money(price)}</div>
+              <div class="line-price">${money(lineTotal)}</div>
             </div>
           </div>
         </div>
@@ -111,33 +104,30 @@ function actualizarCarrito() {
     `;
   });
 
-  // Subtotal y total
-  if (subtotalEl) subtotalEl.textContent = "$" + total.toFixed(2);
-  if (totalEl) totalEl.textContent = "$" + total.toFixed(2);
+  const shipping = subtotal > 0 ? 10 : 0;
+  const total = subtotal + shipping;
 
-  // Envío (lógica simple)
-  if (shippingEl) {
-    shippingEl.textContent = total > 0 ? "$10.00" : "$0.00";
-  }
+  if (subtotalEl) subtotalEl.textContent = money(subtotal);
+  if (shippingEl) shippingEl.textContent = money(shipping);
+  if (totalEl) totalEl.textContent = money(total);
 
-  // Contador de items
   if (contador) {
-    contador.textContent = totalItems + " items";
+    contador.textContent = totalItems + (totalItems === 1 ? " item" : " items");
   }
+
+  guardarCarrito();
 }
 
 // EVENTOS AL CARGAR
 document.addEventListener("DOMContentLoaded", () => {
   actualizarCarrito();
 
-  // BOTÓN VACIAR CARRITO
   document.getElementById("clearCart")?.addEventListener("click", () => {
     carrito = [];
     guardarCarrito();
     actualizarCarrito();
   });
 
-  // BOTÓN FINALIZAR COMPRA
   document.getElementById("checkoutBtn")?.addEventListener("click", () => {
     if (carrito.length === 0) {
       alert("El carrito está vacío");

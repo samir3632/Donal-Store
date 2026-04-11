@@ -10,26 +10,25 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="home.html" aria-label="Donal Store - Inicio">
+      <a class="brand" href="home.php" aria-label="Donal Store - Inicio">
         <span class="brand-mark">DS</span>
         <span class="brand-name">Donal Store</span>
       </a>
 
       <nav class="nav" aria-label="Navegación principal">
-        <a href="home.html" class="nav-link is-active">Inicio</a>
-        <a href="products.html" class="nav-link">Tienda</a>
-        <a href="carrito.html" class="nav-link">Carrito</a>
+        <a href="home.php" class="nav-link is-active">Inicio</a>
+        <a href="products.php" class="nav-link">Tienda</a>
+        <a href="carrito.php" class="nav-link">Carrito</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-ghost" href="products.html">Ver colección</a>
-        <a class="btn btn-primary" href="carrito.html">Ir al carrito</a>
+        <a class="btn btn-ghost" href="products.php">Ver colección</a>
+        <a class="btn btn-primary" href="carrito.php">Ir al carrito</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -41,7 +40,7 @@
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="products.html">Comprar ahora</a>
+            <a class="btn btn-primary" href="products.php">Comprar ahora</a>
             <a class="btn btn-ghost" href="#categorias">Ver categorías</a>
           </div>
 
@@ -84,7 +83,6 @@
       </div>
     </section>
 
-    <!-- Categorías -->
     <section class="section" id="categorias">
       <div class="container">
         <div class="section-head">
@@ -93,19 +91,19 @@
         </div>
 
         <div class="cards-3">
-          <a class="card" href="products.html">
+          <a class="card" href="products.php">
             <div class="card-icon">♀</div>
             <h3 class="card-title">Mujer</h3>
             <p class="card-text">Vestidos, tops, jeans, básicos y más.</p>
           </a>
 
-          <a class="card" href="products.html">
+          <a class="card" href="products.php">
             <div class="card-icon">♂</div>
             <h3 class="card-title">Hombre</h3>
             <p class="card-text">Camisas, pantalones, hoodies y denim.</p>
           </a>
 
-          <a class="card" href="products.html">
+          <a class="card" href="products.php">
             <div class="card-icon">⌁</div>
             <h3 class="card-title">Accesorios</h3>
             <p class="card-text">Gorras, bolsos, cinturones y más.</p>
@@ -114,7 +112,6 @@
       </div>
     </section>
 
-    <!-- Destacados -->
     <section class="section section-muted" id="destacados">
       <div class="container">
         <div class="section-head">
@@ -130,7 +127,7 @@
               <p class="product-desc">Algodón suave, fit cómodo y colores neutros.</p>
               <div class="product-row">
                 <span class="price">$19.99</span>
-                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+                <a class="btn btn-small btn-primary" href="products.php">Ver</a>
               </div>
             </div>
           </article>
@@ -142,7 +139,7 @@
               <p class="product-desc">Calidez y estilo urbano para diario.</p>
               <div class="product-row">
                 <span class="price">$39.99</span>
-                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+                <a class="btn btn-small btn-primary" href="products.php">Ver</a>
               </div>
             </div>
           </article>
@@ -154,7 +151,7 @@
               <p class="product-desc">Corte moderno, ideal para cualquier look.</p>
               <div class="product-row">
                 <span class="price">$29.99</span>
-                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+                <a class="btn btn-small btn-primary" href="products.php">Ver</a>
               </div>
             </div>
           </article>
@@ -166,7 +163,7 @@
               <p class="product-desc">Complemento perfecto para elevar tu outfit.</p>
               <div class="product-row">
                 <span class="price">$14.99</span>
-                <a class="btn btn-small btn-primary" href="products.html">Ver</a>
+                <a class="btn btn-small btn-primary" href="products.php">Ver</a>
               </div>
             </div>
           </article>
@@ -174,7 +171,6 @@
       </div>
     </section>
 
-    <!-- Beneficios -->
     <section class="section">
       <div class="container">
         <div class="split">
@@ -189,8 +185,8 @@
               <li><strong>Envíos</strong> con seguimiento (demo)</li>
             </ul>
             <div class="hero-cta">
-              <a class="btn btn-primary" href="products.html">Ir a la tienda</a>
-              <a class="btn btn-ghost" href="carrito.html">Ver carrito</a>
+              <a class="btn btn-primary" href="products.php">Ir a la tienda</a>
+              <a class="btn btn-ghost" href="carrito.php">Ver carrito</a>
             </div>
           </div>
 
@@ -223,9 +219,9 @@
       </div>
 
       <div class="footer-links">
-        <a href="home.html">Inicio</a>
-        <a href="products.html">Tienda</a>
-        <a href="carrito.html">Carrito</a>
+        <a href="home.php">Inicio</a>
+        <a href="products.php">Tienda</a>
+        <a href="carrito.php">Carrito</a>
       </div>
     </div>
   </footer>

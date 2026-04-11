@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<script src="../Js/index.js"></script>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -9,22 +8,21 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="home.html" aria-label="Donal Store - Inicio">
+      <a class="brand" href="home.php" aria-label="Donal Store - Inicio">
         <span class="brand-mark">DS</span>
         <span class="brand-name">Donal Store</span>
       </a>
 
       <nav class="nav" aria-label="Navegación principal">
-        <a href="home.html" class="nav-link">Inicio</a>
-        <a href="products.html" class="nav-link">Productos</a>
-        <a href="carrito.html" class="nav-link is-active">Carrito</a>
+        <a href="home.php" class="nav-link">Inicio</a>
+        <a href="products.php" class="nav-link">Tienda</a>
+        <a href="carrito.php" class="nav-link is-active">Carrito</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-ghost" href="products.html">Seguir comprando</a>
+        <a class="btn btn-ghost" href="products.php">Seguir comprando</a>
       </div>
     </div>
   </header>
@@ -37,64 +35,29 @@
           <p class="page-subtitle">Revisa tus productos y finaliza la compra cuando estés listo.</p>
         </div>
 
-        <!-- El JS luego engancha este botón -->
         <button id="clearCart" class="btn btn-ghost btn-danger" type="button">
           Vaciar carrito
         </button>
       </div>
 
       <div class="cart-layout">
-        <!-- Lista de productos -->
         <section class="panel" aria-label="Productos en el carrito">
           <div class="panel-head">
             <h2 class="panel-title">Productos</h2>
             <span class="pill" id="itemsCountPill">0 items</span>
           </div>
 
-          <div id="cartList" class="cart-list">
-            <!-- Item de ejemplo (puedes duplicar/editar; el JS luego lo renderiza dinámico) -->
-            <article class="cart-item" data-id="camiseta-basica" data-price="19.99">
-                <div class="thumb" aria-hidden="true"></div>
+          <div id="cartList" class="cart-list"></div>
 
-                <div class="item-info">
-                    <div class="item-top">
-                    <div>
-                        <h3 class="item-title">Camiseta Básica Premium</h3>
-                        <p class="item-meta">Mujer • Color: Blanco • Talla: M</p>
-                    </div>
-
-                    <button class="icon-btn remove" type="button" aria-label="Eliminar producto">
-                        ✕
-                    </button>
-                    </div>
-
-                    <div class="item-bottom">
-                    <div class="qty" aria-label="Cantidad">
-                        <button class="qty-btn dec" type="button" aria-label="Disminuir cantidad">−</button>
-                        <input class="qty-input" type="number" min="1" value="1" inputmode="numeric" />
-                        <button class="qty-btn inc" type="button" aria-label="Aumentar cantidad">+</button>
-                    </div>
-
-                    <div class="price-block">
-                        <div class="unit">Unit: <span class="unit-price">$19.99</span></div>
-                        <div class="line-price">$19.99</div>
-                    </div>
-                    </div>
-                </div>
-            </article>
-          </div>
-
-          <!-- Estado vacío (el JS luego lo muestra/oculta) -->
           <div id="emptyState" class="empty" hidden>
             <div class="empty-card">
               <div class="empty-title">Tu carrito está vacío</div>
               <div class="empty-text">Agrega productos para verlos aquí.</div>
-              <a class="btn btn-primary" href="products.html">Ir a productos</a>
+              <a class="btn btn-primary" href="products.php">Ir a productos</a>
             </div>
           </div>
         </section>
 
-        <!-- Resumen -->
         <aside class="panel summary" aria-label="Resumen de compra">
           <h2 class="panel-title">Resumen</h2>
 
@@ -135,11 +98,13 @@
       </div>
 
       <div class="footer-links">
-        <a href="home.html">Inicio</a>
-        <a href="products.html">Productos</a>
-        <a href="carrito.html">Carrito</a>
+        <a href="home.php">Inicio</a>
+        <a href="products.php">Tienda</a>
+        <a href="carrito.php">Carrito</a>
       </div>
     </div>
   </footer>
+
+  <script src="../Js/carrito.js"></script>
 </body>
 </html>
