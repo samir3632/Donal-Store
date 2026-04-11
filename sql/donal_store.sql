@@ -24,7 +24,7 @@ CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
     descripcion TEXT,
-    precio DECIMAL(10,2) NOT NULL,
+    precio DECIMAL(10000,2) NOT NULL,
     stock INT DEFAULT 0,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -54,6 +54,21 @@ CREATE TABLE detalle_pedido (
 );
 
 -- =========================
+-- TABLA detalle_transacciones
+-- =========================
+
+CREATE TABLE transacciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT NOT NULL,
+    referencia VARCHAR(100) NOT NULL UNIQUE,
+    monto DECIMAL(10,2) NOT NULL,
+    metodo_pago VARCHAR(50) NOT NULL,
+    estado VARCHAR(50) DEFAULT 'pendiente',
+    fecha_transaccion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id)
+);
+
+-- =========================
 -- DATOS DE usuarios
 -- =========================
 INSERT INTO usuarios (nombre, email, password)
@@ -73,6 +88,6 @@ VALUES
 ('Short', 'Short casual para verano', 100000, 90),
 ('Short corto', 'Short corto casual', 90000, 60),
 ('Skine jeans', 'Jean tiro alto', 1500000, 80),
-('Mom jeans', 'Juan tiro alto ancho', 170000, 120),
-('Jean', 'Jeans para hombre bota recta', 190000, 85),
-('Gorra', 'Gorra para mujer rosa', 100000, 90);
+('Mom jeans', 'Jean tiro alto ancho', 170000, 120),
+('Jean', 'Jean para hombre bota recta', 190000, 85),
+('Gorra', 'Gorra para mujer rosa', 50000, 90);
