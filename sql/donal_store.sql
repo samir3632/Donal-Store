@@ -8,16 +8,6 @@ CREATE DATABASE donal_store;
 USE donal_store;
 
 -- =========================
--- TABLA usuarios
--- =========================
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
-);
-
--- =========================
 -- TABLA productos
 -- =========================
 CREATE TABLE productos (
@@ -70,5 +60,9 @@ VALUES
 ('Blusa manga corta', 'Blusa manga corta negra', 120000, 100),
 ('Vestido corto', 'Vestido casual para verano', 180000, 90),
 ('Vestido largo', 'Vestido largo elegante', 230000, 76),
-('Short', 'Short casual para verano', 180000, 90),
-('Short corto', 'Short corto casual', 180000, 90);
+('Short', 'Short casual para verano', 100000, 90),
+('Short corto', 'Short corto casual', 90000, 60),
+('Skine jeans', 'Jean tiro alto', 1500000, 80),
+('Mom jeans', 'Juan tiro alto ancho', 170000, 120),
+('Jean', 'Jeans para hombre bota recta', 190000, 85),
+('Gorra', 'Gorra para mujer rosa', 100000, 90);
