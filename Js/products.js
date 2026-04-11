@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("carrito", JSON.stringify(carrito));
 
       btn.textContent = "Agregado";
-      setTimeout(() => (btn.textContent = "Agregar"), 700);
+      setTimeout(() => (btn.textContent = "Agregar al carrito"), 700);
     });
   });
 });
