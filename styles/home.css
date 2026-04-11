@@ -1,5 +1,6 @@
 body {
   background-color: #3D3A3A;
+  margin: 0;
 }
 
 .header {
@@ -16,8 +17,17 @@ body {
 }
 
 .logo {
+  font-family: sans-serif;
   font-size: 50px;
   margin: 0;              
+  animation: rgb-cambiante 5s infinite;
+}
+
+@keyframes rgb-cambiante {
+  0% { color: rgb(255, 0, 0); }    /* Rojo */
+  33% { color: rgb(0, 255, 0); }   /* Verde */
+  66% { color: rgb(0, 0, 255); }   /* Azul */
+  100% { color: rgb(255, 0, 0); }  /* Rojo */
 }
 
 .nav {
