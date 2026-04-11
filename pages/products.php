@@ -82,7 +82,7 @@ $productos = $stmt->fetchAll();
 
                 <div class="bottom">
                   <span class="price">$<?= number_format((float)$p['precio'], 2) ?></span>
-                  <button class="btn btn-primary btn-small add-to-cart" type="button">Agregar</button>
+                  <button class="btn btn-primary btn-small add-to-cart" type="button">Agregar al carrito</button>
                 </div>
               </div>
             </article>
