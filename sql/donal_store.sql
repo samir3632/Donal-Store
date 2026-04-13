@@ -1,37 +1,24 @@
--- Eliminar base de datos si ya existe
 DROP DATABASE IF EXISTS donal_store;
-
--- Crear base de datos
 CREATE DATABASE donal_store;
-
--- Usar base de datos
 USE donal_store;
 
--- =========================
--- TABLA usuarios
--- =========================
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL,
+    balance DECIMAL(10,2) NOT NULL DEFAULT 0
 );
 
--- =========================
--- TABLA productos
--- =========================
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
     descripcion TEXT,
-    precio DECIMAL(10000,2) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
     stock INT DEFAULT 0,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- =========================
--- TABLA pedidos
--- =========================
 CREATE TABLE pedidos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT,
@@ -40,9 +27,6 @@ CREATE TABLE pedidos (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
--- =========================
--- TABLA detalle_pedido
--- =========================
 CREATE TABLE detalle_pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
     pedido_id INT,
@@ -52,10 +36,6 @@ CREATE TABLE detalle_pedido (
     FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
     FOREIGN KEY (producto_id) REFERENCES productos(id)
 );
-
--- =========================
--- TABLA detalle_transacciones
--- =========================
 
 CREATE TABLE transacciones (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -68,17 +48,11 @@ CREATE TABLE transacciones (
     FOREIGN KEY (pedido_id) REFERENCES pedidos(id)
 );
 
--- =========================
--- DATOS DE usuarios
--- =========================
-INSERT INTO usuarios (nombre, email, password)
+INSERT INTO usuarios (nombre, email, password, balance)
 VALUES
-('Vanessa', 'vanessa@gmail.com', '123456'),
-('Carlos', 'carlos@gmail.com', '123456');
+('Vanessa', 'vanessa@gmail.com', '123456', 500000.00),
+('Carlos', 'carlos@gmail.com', '123456', 120000.00);
 
--- =========================
--- DATOS DE productos
--- =========================
 INSERT INTO productos (nombre, descripcion, precio, stock)
 VALUES
 ('Blusa básica', 'Blusa elegante color beige', 80000, 60),

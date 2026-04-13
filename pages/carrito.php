@@ -78,6 +78,25 @@
             <strong id="total">$0.00</strong>
           </div>
 
+          <div class="summary-field">
+            <label for="checkoutEmail">Correo</label>
+            <input id="checkoutEmail" type="email" placeholder="usuario@correo.com" />
+          </div>
+
+          <div class="summary-field">
+            <label for="checkoutMetodo">Método de pago</label>
+            <select id="checkoutMetodo">
+              <option value="tarjeta">Tarjeta (simulado)</option>
+              <option value="pse">PSE (simulado)</option>
+              <option value="efectivo">Efectivo (simulado)</option>
+            </select>
+          </div>
+
+          <div class="summary-field">
+            <label for="checkoutRef">Referencia</label>
+            <input id="checkoutRef" type="text" placeholder="Opcional" />
+          </div>
+
           <button class="btn btn-primary btn-full" type="button" id="checkoutBtn">
             Finalizar compra
           </button>
