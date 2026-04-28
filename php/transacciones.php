@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         $conexion->beginTransaction();
 
-    
+      n 
         $sql = "SELECT nombre, precio, stock 
                 FROM productos 
                 WHERE id = :id";
